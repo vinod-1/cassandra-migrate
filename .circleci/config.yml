@@ -10,7 +10,7 @@ jobs:
       - checkout
       - run: python -V
       - run: sudo apt-get install python-setuptools
-      - run: python setup.py install
+      - run: sudo python setup.py install
       - run: cassandra-migrate -u cassandra -P cassandra -H server1.tvizion.site status
   MigrateChange:
     executor: python/default
