@@ -8,9 +8,11 @@ jobs:
     executor: python/default
     steps:
       - checkout
-      - python/load-cache
-      - python/install-deps
-      - python/save-cache
+      - run: python -V
+      - run: sudo apt-get install python-setuptools
+#      - python/load-cache
+#      - python/install-deps
+#      - python/save-cache
  #     - run:
  #         command: ./manage.py test
  #         name: Test
