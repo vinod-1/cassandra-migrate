@@ -10,7 +10,7 @@ jobs:
       - checkout
       - run: python -V
       - run: sudo apt-get install python-setuptools
-      - run: sudo python setup.py install
+#      - run: sudo python setup.py install
   MigrateChange:
     executor: python/default
     steps:
