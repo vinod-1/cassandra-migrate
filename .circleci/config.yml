@@ -10,13 +10,12 @@ jobs:
       - checkout
       - run: python -V
       - run: sudo apt-get install python-setuptools
-#      - python/load-cache
-#      - python/install-deps
-#      - python/save-cache
- #     - run:
- #         command: ./manage.py test
- #         name: Test
-
+      - run: cassandra-migrate -u cassandra -P cassandra -H server1.tvizion.site status
+  MigrateChange:
+    executor: python/default
+    steps:
+      - run: python -V
+    
 workflows:
   main:
     jobs:
